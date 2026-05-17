@@ -675,6 +675,45 @@ body::before {
     min-width: 30px;
 }
 
+/* Company details block (structured contact info) */
+.company-details {
+    line-height: 1.45;
+    color: #334155; /* subtle dark blue/gray similar to previous inline style */
+}
+
+.company-flex {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.company-logo {
+    width: 72px;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+    background: white;
+    padding: 4px;
+    box-shadow: 0 4px 12px rgba(14,57,96,0.06);
+}
+
+.company-details address {
+    font-style: normal;
+    color: inherit;
+}
+
+.info-item a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.info-item a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
 .info-item h4 {
     font-size: 16px;
     color: var(--light-text);
