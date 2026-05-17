@@ -4,6 +4,7 @@ const navMenu = document.querySelector('.nav-menu');
 
 if (hamburger) {
     hamburger.addEventListener('click', () => {
+        // toggle mobile nav menu
         navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
         hamburger.classList.toggle('active');
     });
@@ -11,11 +12,22 @@ if (hamburger) {
     // Close menu when a link is clicked
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
-            navMenu.style.display = 'none';
-            hamburger.classList.remove('active');
+            // only auto-close the mobile menu on small screens or when hamburger is visible
+            const isMobile = window.innerWidth <= 768 || window.getComputedStyle(hamburger).display !== 'none';
+            if (isMobile) {
+                navMenu.style.display = 'none';
+                hamburger.classList.remove('active');
+            }
         });
     });
 }
+
+// Ensure nav menu is reset on resize (so it doesn't stay hidden after mobile toggle)
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && navMenu) {
+        navMenu.style.display = '';
+    }
+});
 
 // ==================== Smooth Scroll Navigation ====================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -26,6 +38,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             document.querySelector(href).scrollIntoView({
                 behavior: 'smooth'
             });
+            // mark clicked nav link as active immediately so it stays highlighted
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            if (this.classList.contains('nav-link')) this.classList.add('active');
         }
     });
 });
@@ -56,7 +71,8 @@ window.addEventListener('scroll', () => {
     const parallaxElements = document.querySelectorAll('.floating-object, .stars');
 
     parallaxElements.forEach((el, index) => {
-        el.style.transform = `translateY(${scrolled * 0.3 * (index + 1)}px)`;
+        // reduce intensity for smoother/less jarring parallax on light theme
+        el.style.transform = `translateY(${scrolled * 0.08 * (index + 1)}px)`;
     });
 });
 
@@ -68,11 +84,10 @@ window.addEventListener('scroll', () => {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     if (scrollTop > 100) {
-        navbar.style.boxShadow = '0 5px 30px rgba(102, 126, 234, 0.2)';
-        navbar.style.background = 'rgba(15, 15, 30, 0.98)';
+        // use scrolled class to apply a light gradient using logo colors instead of darkening
+        navbar.classList.add('scrolled');
     } else {
-        navbar.style.boxShadow = '0 2px 20px rgba(102, 126, 234, 0.1)';
-        navbar.style.background = 'rgba(15, 15, 30, 0.95)';
+        navbar.classList.remove('scrolled');
     }
 
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
@@ -85,8 +100,9 @@ window.addEventListener('mousemove', (e) => {
     const mouseY = e.clientY / window.innerHeight;
 
     banners.forEach((banner, index) => {
-        const offsetX = (mouseX - 0.5) * 20 * (index + 1);
-        const offsetY = (mouseY - 0.5) * 20 * (index + 1);
+        // lighter parallax follow for banners
+        const offsetX = (mouseX - 0.5) * 10 * (index + 1);
+        const offsetY = (mouseY - 0.5) * 8 * (index + 1);
         banner.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
     });
 });

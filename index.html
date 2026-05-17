@@ -12,7 +12,10 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <i class="fas fa-brain"></i> AymWos Technologies
+                <a href="#home" class="nav-logo-inner" aria-label="Aymwos Technologies - Home">
+                    <!-- Put your logo file in the project at assets/aymwos-logo.png -->
+                    <img src="assets/aymwos-logo.png" alt="Aymwos Technologies logo" class="site-logo">
+                </a>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
@@ -125,6 +128,17 @@
                     <p>Round-the-clock technical support to keep your systems running smoothly. Proactive monitoring, SLA guarantees, and expert incident response.</p>
                     <div class="card-hover-effect"></div>
                 </div>
+
+                <!-- Service Card 7 - Recruiting Services -->
+                <div class="service-card card-7">
+                    <div class="card-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Recruiting Services</h3>
+                    <p class="tech-stack">Talent Acquisition • Technical Hiring • HR Solutions</p>
+                    <p>End-to-end recruiting services to find, vet, and onboard technical talent that fits your culture and project needs. Contract, permanent and executive hiring support.</p>
+                    <div class="card-hover-effect"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -220,39 +234,27 @@
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>info@aymwostechnologies.com</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+1 (800) 123-4567</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Address</h4>
-                            <p>123 Tech Street, Innovation City, IC 12345</p>
-                        </div>
+                    <h3>Contact & Company Details</h3>
+                    <div class="company-details" style="line-height:1.5; color: #334155;">
+                        Aymwos Technologies | Reg: 2022/ 174426 / 07 | VAT Reg. No.: 9807502183<br>
+                        UNIT 15 SAN PABLO, PRETORIUS, ROAD, MIDRAND, GAUTENG, 1686<br>
+                        Tel: +27 62 215 2795 | Cell: +27 84 481 3145 | e-mail: hr@aymwostechnologies.com<br>
+                        Web Site: www.aymwostechnologies.com
                     </div>
                 </div>
 
-                <form class="contact-form">
+                <form class="contact-form" aria-label="Contact form">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <label for="cf-name" class="sr-only">Your name</label>
+                        <input id="cf-name" name="name" type="text" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <label for="cf-email" class="sr-only">Your email</label>
+                        <input id="cf-email" name="email" type="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <label for="cf-message" class="sr-only">Your message</label>
+                        <textarea id="cf-message" name="message" placeholder="Your Message" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
@@ -291,7 +293,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 AymWos Technologies. All rights reserved.</p>
+                <p>Aymwos Technologies | Reg: 2022/ 174426 / 07 | VAT Reg. No.: 9807502183 | UNIT 15 SAN PABLO, PRETORIUS, ROAD, MIDRAND, GAUTENG, 1686 | Tel: +27 62 215 2795 | Cell: +27 84 481 3145 | e-mail: hr@aymwostechnologies.com | Web Site: www.aymwostechnologies.com</p>
             </div>
         </div>
     </footer>
