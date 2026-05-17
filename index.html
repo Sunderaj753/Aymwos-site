@@ -41,6 +41,12 @@
             <h1 class="hero-title">Welcome to AymWos Technologies</h1>
             <p class="hero-subtitle">Transforming Your Business Through Cutting-Edge Technology & AI Innovation</p>
             <button class="cta-button">Get Started Today</button>
+            <div class="tech-badges">
+                <span class="tech-badge"><i class="fab fa-aws"></i> AWS</span>
+                <span class="tech-badge"><i class="fas fa-brain"></i> AI/ML</span>
+                <span class="tech-badge"><i class="fas fa-cloud"></i> Cloud</span>
+                <span class="tech-badge"><i class="fas fa-shield-alt"></i> Security</span>
+            </div>
         </div>
         <div class="hero-image">
             <div class="floating-object obj1"></div>
@@ -57,10 +63,11 @@
                 <!-- Service Card 1 -->
                 <div class="service-card card-1">
                     <div class="card-icon">
-                        <i class="fas fa-server"></i>
+                        <i class="fab fa-aws"></i>
                     </div>
                     <h3>Cloud Infrastructure</h3>
-                    <p>Scalable, secure, and reliable cloud solutions tailored to your business needs. We handle deployment, management, and optimization.</p>
+                    <p class="tech-stack">AWS • Azure • GCP</p>
+                    <p>Scalable, secure, and reliable cloud solutions tailored to your business needs. Multi-cloud strategy with enterprise-grade deployment, management, and optimization.</p>
                     <div class="card-hover-effect"></div>
                 </div>
 
@@ -70,7 +77,8 @@
                         <i class="fas fa-code"></i>
                     </div>
                     <h3>Custom Development</h3>
-                    <p>Build powerful applications with our expert development team. From web to mobile, we deliver excellence in every project.</p>
+                    <p class="tech-stack">React • Node.js • Python</p>
+                    <p>Build powerful applications with our expert development team. Full-stack solutions from web to mobile, delivering excellence in every project.</p>
                     <div class="card-hover-effect"></div>
                 </div>
 
@@ -80,7 +88,8 @@
                         <i class="fas fa-lock"></i>
                     </div>
                     <h3>Security Solutions</h3>
-                    <p>Protect your business with enterprise-grade security. We provide comprehensive cybersecurity and data protection services.</p>
+                    <p class="tech-stack">Penetration Testing • Compliance</p>
+                    <p>Protect your business with enterprise-grade security. Comprehensive cybersecurity, data protection, and compliance management services.</p>
                     <div class="card-hover-effect"></div>
                 </div>
 
@@ -90,7 +99,8 @@
                         <i class="fas fa-cogs"></i>
                     </div>
                     <h3>IT Consulting</h3>
-                    <p>Strategic technology consulting to drive digital transformation. We help you make informed decisions for your IT infrastructure.</p>
+                    <p class="tech-stack">Architecture • Strategy • DevOps</p>
+                    <p>Strategic technology consulting to drive digital transformation. Expert guidance for IT infrastructure, cloud migration, and system optimization.</p>
                     <div class="card-hover-effect"></div>
                 </div>
 
@@ -100,7 +110,8 @@
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Business Analytics</h3>
-                    <p>Transform raw data into actionable insights. Our analytics solutions help you understand your business better.</p>
+                    <p class="tech-stack">Big Data • ML • Dashboards</p>
+                    <p>Transform raw data into actionable insights. Advanced analytics, machine learning models, and real-time dashboards for data-driven decisions.</p>
                     <div class="card-hover-effect"></div>
                 </div>
 
@@ -110,7 +121,8 @@
                         <i class="fas fa-headset"></i>
                     </div>
                     <h3>24/7 Support</h3>
-                    <p>Round-the-clock technical support to keep your systems running smoothly. Our experts are always ready to help.</p>
+                    <p class="tech-stack">SLA • Monitoring • Incident Response</p>
+                    <p>Round-the-clock technical support to keep your systems running smoothly. Proactive monitoring, SLA guarantees, and expert incident response.</p>
                     <div class="card-hover-effect"></div>
                 </div>
             </div>
@@ -168,21 +180,30 @@
             <h2 class="section-title">Recent Projects</h2>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <div class="portfolio-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                    <div class="portfolio-image" style="background: linear-gradient(135deg, #1a4a63 0%, #4a9fd8 100%); position: relative; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-chart-bar" style="font-size: 80px; opacity: 0.3;"></i>
+                    </div>
                     <h3>AI-Powered Analytics Platform</h3>
-                    <p>Developed a machine learning platform for real-time business analytics and forecasting.</p>
+                    <p class="project-tech">Machine Learning • Real-time Data • Predictive Analytics</p>
+                    <p>Developed a machine learning platform for real-time business analytics and forecasting. Served 500+ enterprises.</p>
                 </div>
 
                 <div class="portfolio-item">
-                    <div class="portfolio-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                    <div class="portfolio-image" style="background: linear-gradient(135deg, #4a9fd8 0%, #6db54e 100%); position: relative; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-cloud-upload-alt" style="font-size: 80px; opacity: 0.3;"></i>
+                    </div>
                     <h3>Enterprise Cloud Migration</h3>
-                    <p>Successful migration of legacy systems to cloud infrastructure with zero downtime.</p>
+                    <p class="project-tech">AWS • Azure • Zero-Downtime Migration</p>
+                    <p>Successful migration of legacy systems to cloud infrastructure with zero downtime. Reduced costs by 40%.</p>
                 </div>
 
                 <div class="portfolio-item">
-                    <div class="portfolio-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                    <div class="portfolio-image" style="background: linear-gradient(135deg, #6db54e 0%, #1a4a63 100%); position: relative; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-mobile-alt" style="font-size: 80px; opacity: 0.3;"></i>
+                    </div>
                     <h3>Mobile Banking Application</h3>
-                    <p>Developed a secure mobile app for financial services with 500K+ active users.</p>
+                    <p class="project-tech">React Native • iOS • Android • Security</p>
+                    <p>Developed a secure mobile app for financial services with 500K+ active users. Fully compliant with banking regulations.</p>
                 </div>
             </div>
         </div>
