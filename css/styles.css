@@ -13,6 +13,7 @@
     --card-bg: rgba(245, 250, 255, 0.8);
     --glass-border: rgba(14, 57, 96, 0.06);
     --soft-shadow: 0 6px 24px rgba(14, 57, 96, 0.06);
+    --nav-height: 72px;                /* header height adjusted to fit logo */
 }
 
 /* Accessibility helper: visually hidden but available to screen readers */
@@ -40,6 +41,7 @@ body {
     color: var(--text-color);
     overflow-x: hidden;
     position: relative;
+    padding-top: calc(var(--nav-height) + 8px); /* reserve space for fixed header */
 }
 
 /* subtle animated gradient blobs behind the content for an AI "light" theme */
@@ -76,25 +78,31 @@ body::before {
     z-index: 1000;
     box-shadow: var(--soft-shadow);
     border-bottom: 1px solid var(--glass-border);
+    height: var(--nav-height);
 }
 
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 28px;
+    padding: 0 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 276px; /* adjusted to ~3x logo size */
+    height: var(--nav-height);
 }
 
 .nav-logo {
-    display: flex;
-    align-items: center;
+    position: absolute;
+    left: 42px; /* tighter left alignment to match attached screenshot */
+    top: 100%;
+    transform: translateY(-50%);
+    z-index: 100;
 }
 
 .nav-logo .site-logo {
-    height: 216px; /* adjusted logo height ~3x */
+    height: 240px; /* sized to match attached screenshot */
+    width: auto;
+    max-width: 100%;
     display: block;
 }
 
@@ -111,6 +119,7 @@ body::before {
     list-style: none;
     gap: 36px;
     align-items: center;
+    margin-left: auto;
 }
 
 .nav-link {
@@ -209,7 +218,7 @@ body::before {
     align-items: center;
     justify-content: space-between;
     padding: 100px 20px 50px;
-    margin-top: 300px; /* push content below larger header (~3x) */
+    margin-top: 0;
     position: relative;
     overflow: hidden;
 }
@@ -887,14 +896,14 @@ body::before {
 
     /* Cap header and logo sizes on smaller screens to remain usable */
     .nav-container {
-        height: 140px;
+        height: 64px; /* slightly smaller header on very small screens */
     }
 
     .nav-logo .site-logo {
-        height: 120px;
+        height: 48px;
     }
 
-    .hero { margin-top: 160px; }
+    .hero { margin-top: 0; }
 
     .nav-logo {
         font-size: 18px;
